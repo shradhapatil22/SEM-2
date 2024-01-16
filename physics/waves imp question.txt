@@ -1,0 +1,10 @@
+ANSWER THE FOLLOWING QUESTIONS:
+Q1. Obtain the general wave equation in one dimension and express it in three dimensions.
+Q2. State the principle of superposition of waves. Discuss the consequences arising out of superposition of waves.
+Q3. How are standing waves generated? Deduce an equation for standing waves and discuss the conditions for nodes and antinodes (characteristics of standing waves) with needful diagram.
+Q4. Distinguish between stationary waves and travelling(propagating) waves.
+Q5. Explain the terms Geometrical path, Optical path, Path difference and Phase difference.
+Q6. Explain the two distinct methods of obtaining interference of light with diagrams.
+Q7. Explain the interference of light obtained due to reflected light from a thin parallel film and obtain an expression for path difference. Discuss the conditions for bright and dark fringes (constructive and destructive interference.)
+Q8. What is a wedge shaped film? or  What is an air wedge?. Explain with diagram how interference pattern is obtained in a wedge shaped film. Discuss the conditions for bright and dark fringes. Deduce an expression for fringe width.
+Q9. Describe how Newton's rings are obtained. Discuss the conditions for dark and bright rings. Deduce an expression for radius (diameter) of nth dark ring and explain why rings are closer as we move outwards from centre of the Newton's rings.

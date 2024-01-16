@@ -1,0 +1,46 @@
+Create a menu driven C++ application that stores price list of 5 items. It also provides a facility to print the largest price among all the elements. It also computes the sum of all prices using class and objects in C++ .
+
+
+
+
+#include<iostream>
+using namespace std;
+class price
+{
+private:
+    float prices[5];
+public:
+    void get_data();
+    void calculations();
+};
+
+void price :: get_data()
+{
+    cout<<"Enter the prices of each element "<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cin>> prices[i];
+    }
+    
+}
+
+void price :: calculations()
+{
+   int largest_price=0,sum=0;
+   for (int i = 0; i <5;i++)
+   {
+       if (largest_price< prices[i])
+       {
+           largest_price=prices[i];
+       }
+       sum+=largest_price;
+   }
+   cout<<"Largest price= "<< largest_price<<"\t\t"<<"Sum of prices= "<<sum<<endl;
+}
+ 
+int main()
+{
+    price ob;
+    ob.get_data();
+    ob.calculations();
+}

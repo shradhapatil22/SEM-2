@@ -1,0 +1,169 @@
+Create a menu driven C++ application that stores price list of 5 items. It also provides a facility to print the largest price among all the elements. It also computes the sum of all prices using class and objects in C++ .
+
+
+source code:
+#include<iostream>
+using namespace std;
+class price
+{
+private:
+    float prices[5];
+public:
+    void get_data();
+    void calculations();
+};
+
+void price :: get_data()
+{
+    cout<<"Enter the prices of each element "<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cin>> prices[i];
+    }
+    
+}
+
+void price :: calculations()
+{
+   int largest_price=0,sum=0;
+   for (int i = 0; i <5;i++)
+   {
+       if (largest_price< prices[i])
+       {
+           largest_price=prices[i];
+       }
+       sum+=largest_price;
+   }
+   cout<<"Largest price= "<< largest_price<<"\t\t"<<"Sum of prices= "<<sum<<endl;
+}
+ 
+int main()
+{
+    price ob;
+    ob.get_data();
+    ob.calculations();
+}
+
+********************************
+
+2) 1.3) Create a class to represent a bank account. Include the following members:
+Data members
+            a. name of the depositor
+            b. account number
+            c. balance amount
+Member functions
+            a. To assign initial values
+            b. To deposit an amount
+            c. To withdraw an amount after checking the balance
+            d. To display details of the account
+Write a menu driven main function that calls the member functions until the user chooses to terminate
+
+
+source code:
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+class banks
+{   
+     private:
+        char name_of_the_depositor[100];
+        int  account_number,balance_amount;
+     public:
+       void initial_values();
+        void deposit();
+        void withdraw();
+        void final_values();
+};
+void banks::initial_values()
+{
+    cout<<"Enter name of the depositor: ";
+    cin>>name_of_the_depositor;
+    cout<<"Enter account number: ";
+    cin>>account_number;
+    cout<<"Enter the balance: ";
+    cin>>balance_amount;
+}
+void banks::deposit()
+{
+    int deposit_amount;
+    cout<<"Enter the deposit amount: "<<endl;
+    cin>>deposit_amount;
+    balance_amount+=deposit_amount;
+}
+void banks:: withdraw()
+{  
+    int withdraw_amount;
+    cout<<"Enter the withdraw amount: "<<endl;
+    cin>>withdraw_amount;
+    if(withdraw_amount>balance_amount)
+        cout<<"Insufficient balance"<<endl;
+    else
+        balance_amount-=withdraw_amount;
+}
+void banks::final_values()
+{
+    cout<<"Name of the account holder: "<<name_of_the_depositor<<endl;
+    cout<<"Account number: "<<account_number<<"\n"<<"Balance amount: "<<balance_amount<<endl;
+   
+}
+int main()
+{
+    int i=1,r;
+    banks ob;
+    ob.initial_values();
+    do
+    {
+        cout<<"\n=======MENU========"<<endl;
+        cout<<"1.DEPOSITE\n2.WITHDRAWAL\n3.BALANCE\n4.EXIT\nCHOOSE: "<<endl;
+        cin>>r;
+        switch(r)
+        {
+            case 1:
+                ob.deposit();
+                ob.final_values();
+                break;
+            case 2:
+                ob.withdraw();
+                ob.final_values();
+                break;
+            case 3:
+                ob.final_values();
+                break;
+            case 4:
+                exit(0);
+            default:
+                cout<<"Enter a valid choice"<<endl;
+        }
+    }while(r!=4);
+    return 0;
+}
+
+
+***************************************
+
+
+
+2.1)2.2) Write a C++ function power(int, int, int &) that takes two integer variables (say a and b) and an integer reference variable as parameter, computes a ^ b and stores the result in the reference variable. Write the associated main() to call this function.
+
+
+source code:
+#include<iostream>
+#include<math.h>
+using namespace std;
+int power(int,int,int &);
+int main()
+{
+    int a,b,c;
+    int &x=c;
+    cout<<"Enter the number and the power to which it has to be raised."<<endl;
+    cin>>a>>b;
+    c=power( a , b , c);
+    cout<<"a^b= "<<c;
+    return 0;
+}
+int power(int a,int b,int &x)
+{
+    x=pow(a,b);
+    return x;
+
+}

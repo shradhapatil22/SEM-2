@@ -1,0 +1,83 @@
+problem statement: Create a class to represent a bank account. Include the following members:
+Data members
+            a. name of the depositor
+            b. account number
+            c. balance amount
+Member functions
+            a. To assign initial values
+            b. To deposit an amount
+            c. To withdraw an amount after checking the balance
+            d. To display details of the account
+Write a menu driven main function that calls the member functions until the user chooses to terminate
+
+source code:
+#include<iostream>
+using namespace std;
+class banks
+{
+     public:
+        char name_of_the_depositor[100];
+        int  account_number,balance_amount,deposit_amount,withdraw_amount,i;
+        void initial_values();
+        void deposit();
+        void withdraw();
+        void final_values();
+};
+void banks::initial_values()
+{
+    cout<<"Enter name of the depositor"<<endl;
+    cin>>name_of_the_depositor;
+    cout<<"Enter account number and balance"<<endl;
+    cin>>account_number>>balance_amount;
+}
+void banks::deposit()
+{
+    cout<<"Enter the deposit amount"<<endl;
+    cin>>deposit_amount;
+    balance_amount+=deposit_amount;
+}
+void banks:: withdraw()
+{
+    cout<<"Enter the withdraw amount"<<endl;
+    cin>>withdraw_amount;
+    if(withdraw_amount>balance_amount)
+        cout<<"Insufficient balance"<<endl;
+    else
+        balance_amount-=withdraw_amount;
+}
+void banks::final_values()
+{
+    cout<<"Name of the account holder: "<<name_of_the_depositor<<endl;
+    cout<<"Account number: "<<account_number<<"\n"<<"Balance amount: "<<balance_amount<<endl;
+   
+}
+int main()
+{
+    int i=1,r;
+    banks ob;
+    ob.initial_values();
+    do
+    {
+        cout<<"Enter '1' to perform deposit '2' to per form withdrawal '3' to check balance '4' to terminate the program"<<endl;
+        cin>>r;
+        switch(r)
+        {
+            case 1:
+                ob.deposit();
+                ob.final_values();
+                break;
+            case 2:
+                ob.withdraw();
+                ob.final_values();
+                break;
+            case 3:
+                ob.final_values();
+                break;
+            case 4:
+                exit(0);
+            default:
+                cout<<"Enter a valid choice"<<endl;
+        }
+    }while(r!=4);
+    return 0;
+}

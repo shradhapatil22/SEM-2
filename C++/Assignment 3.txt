@@ -1,0 +1,20 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int power(int,int,int &);
+int main()
+{
+    int a,b,c;
+    int &x=c;
+    cout<<"Enter the number and the power to which it has to be raised."<<endl;
+    cin>>a>>b;
+    c=power( a , b , c);
+    cout<<"a^b= "<<c;
+    return 0;
+}
+int power(int a,int b,int &x)
+{
+    x=pow(a,b);
+    return x;
+
+}
